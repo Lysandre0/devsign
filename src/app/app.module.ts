@@ -10,6 +10,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
+import { PlanningComponent } from './components/planning/planning.component';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HeaderComponent } from './containers/header/header.component';
     DashboardComponent,
     ModuleDetailComponent,
     HeaderComponent,
+    PlanningComponent,
+    CardsListComponent,
     
   ],
   imports: [
