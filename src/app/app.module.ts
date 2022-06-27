@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './containers/login/login.component';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { ModuleDetailComponent } from './containers/module-detail/module-detail.component';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ModuleDetailComponent
+    ModuleDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MenubarModule,
+    InputTextModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
