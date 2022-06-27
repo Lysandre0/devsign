@@ -9,6 +9,7 @@ import { ModuleDetailComponent } from './containers/module-detail/module-detail.
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { HeaderComponent } from './containers/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ButtonModule } from 'primeng/button';
     LoginComponent,
     DashboardComponent,
     ModuleDetailComponent,
+    HeaderComponent,
     
   ],
   imports: [
