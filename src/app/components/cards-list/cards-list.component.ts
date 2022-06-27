@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Module} from "../../shared/models/module.model";
 
 @Component({
   selector: 'app-cards-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsListComponent implements OnInit {
 
+  @Input() public modules: Module[];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public redirect(): void {
+    console.log("test")
   }
 
 }

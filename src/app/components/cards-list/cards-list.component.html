@@ -1,1 +1,18 @@
-<p>cards-list works!</p>
+<div class="card">
+  <div class="grid">
+    <div *ngFor="let module of modules" class="col-4 p-4">
+      <p-card [header]="module.title" [subheader]="module.field">
+        <ng-template pTemplate="header">
+          <img alt="Image header" [src]="module.image">
+        </ng-template>
+        <p [ngStyle]="{color: 'var(--blue-400)'}">
+          du {{ module.dateStart }} au {{ module.dateEnd }}
+        </p>
+        <ng-template pTemplate="footer" class="text-center">
+          <p-button label="Voir en détail" (click)="redirect()"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
+

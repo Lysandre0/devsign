@@ -17,6 +17,7 @@ const modules: Module[] = [
     ],
     comment: "Cours d'algorithmie",
     place: places[0],
+    image: 'https://korben.info/app/uploads/2018/12/codes-coding-computer-270366.jpg'
   }
 ]
 

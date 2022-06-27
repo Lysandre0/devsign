@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
