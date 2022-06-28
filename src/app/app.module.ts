@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './containers/login/login.component';
@@ -17,7 +16,8 @@ import {CardModule} from 'primeng/card';
 import {FormsModule} from '@angular/forms';
 import {CalendarModule} from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import {ChipModule} from "primeng/chip";
 
 @NgModule({
   declarations: [
@@ -39,6 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CalendarModule,
     FormsModule,
     BrowserAnimationsModule,
+    ToggleButtonModule,
+    FormsModule,
+    ChipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,4 +13,5 @@ export class Module {
   public students: Person[];
   public comment: string;
   public place: Place;
+  public image: string;
 }
