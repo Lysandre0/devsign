@@ -4,5 +4,8 @@
       <img src="assets/logo.PNG" height="40" class="m-2">
     </div>
   </ng-template>
-  <button type="button" pButton label="Déconnexion" icon="pi pi-power-off" style="margin-left:.25em"></button>
+  <button *ngIf="!onLogin"
+          type="button" pButton label="Déconnexion" icon="pi pi-power-off" style="margin-left:.25em"
+          (click)="navigate('login')"
+  ></button>
 </p-menubar>
