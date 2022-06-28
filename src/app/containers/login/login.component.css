@@ -1,48 +1,70 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: montserrat;
+.main_div{
+    width: 100%;
     height: 100vh;
-    overflow: hidden;
+    position: relative;
 }
-.center{
+
+.box{
+    width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
-    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    padding: 50px;
 }
-.center h1{
-    text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;   
-}
-.center form{
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-form .txt_field{
+
+.box .inputBox{
     position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
-}
-.txt_field input{
-    width : 100%;
-    padding: 0 5px;
-    height: 40px;
+    
+}    
+
+.box .inputBox input{
+    width: 100%;
+    padding: 10px 0;
     font-size: 16px;
+    color: black ;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
     border: none;
-    background: none;
+    border: 0.5px solid #e8e8e8;
     outline: none;
+    background-color: #efefef;
+    border-radius: 12px;
 }
-.txt_field label{
+
+.box .inputBox label{
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 5px;
+    padding: 10px 0;
     font-size: 16px;
-    color: #adadad;
-    pointer-events: none;
-    transform: translateY(-50%);
+    color: #a5a5a5;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+.box input[type="submit"]{
+    background:#6e84fb ;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #6e84fb;
+    font-size: 12px;
+}
+
+.box input[type="submit"]:hover{
+    background: #6e84fb;
+    color: black;
+    position: relative;
 }
