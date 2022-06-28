@@ -1,0 +1,12 @@
+:host ::ng-deep .p-card-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:host ::ng-deep .p-card-header img {
+  height: 10rem !important;
+}
+
+:host ::ng-deep .p-button {
+  width: 100% !important;
+}

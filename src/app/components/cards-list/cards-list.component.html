@@ -1,15 +1,28 @@
 <div class="card">
   <div class="grid">
     <div *ngFor="let module of modules" class="col-4 p-4">
-      <p-card [header]="module.title" [subheader]="module.field">
+      <p-card [header]="module.title + ' - ' + module.field">
+        <div class="p-card-subtitle" [ngSwitch]="module.status">
+          <span *ngSwitchCase="'En cours'" [ngStyle]="{color: 'var(--green-400)'}">
+            {{ module.status }},
+          </span>
+          <span *ngSwitchCase="'Clôturé'" [ngStyle]="{color: 'var(--red-400)'}">
+            {{ module.status }},
+          </span>
+          <span *ngSwitchCase="'À venir'" [ngStyle]="{color: 'var(--purple-400)'}">
+            {{ module.status }},
+          </span>
+          <span [ngStyle]="{color: 'var(--blue-400)'}">
+             du {{ module.dateStart }} au {{ module.dateEnd }}
+          </span>
+        </div>
         <ng-template pTemplate="header">
           <img alt="Image header" [src]="module.image">
         </ng-template>
-        <p [ngStyle]="{color: 'var(--blue-400)'}">
-          du {{ module.dateStart }} au {{ module.dateEnd }}
-        </p>
-        <ng-template pTemplate="footer" class="text-center">
-          <p-button label="Voir en détail" (click)="redirect()"></p-button>
+        <ng-template pTemplate="footer">
+          <div class="text-center">
+            <p-button label="Voir en détail" [routerLink]="'/module/' + module.id"></p-button>
+          </div>
         </ng-template>
       </p-card>
     </div>

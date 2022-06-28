@@ -15,8 +15,4 @@ export class CardsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public redirect(): void {
-    console.log("test")
-  }
-
 }
