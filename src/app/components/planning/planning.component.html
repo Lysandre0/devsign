@@ -1,1 +1,5 @@
-<p>planning works!</p>
+<div class="mt-2">
+    <p-card header="Planning">
+        <p-calendar [(ngModel)]="date14" [inline]="true" [showWeek]="false" (mousedown)="moduleDate()" (onSelect)="moduleDate()"></p-calendar>
+    </p-card>
+</div>

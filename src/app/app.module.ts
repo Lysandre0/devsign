@@ -12,6 +12,12 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import {CardModule} from 'primeng/card';
+
+import {FormsModule} from '@angular/forms';
+import {CalendarModule} from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,6 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,10 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    CardModule,
+    CalendarModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

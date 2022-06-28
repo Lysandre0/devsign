@@ -13,14 +13,17 @@ export class HeaderComponent implements OnInit {
   public items: MenuItem[] = [
     {
       label:'Dashboard',
+      routerLink: '/dashboard',
       icon:'pi pi-fw pi-microsoft',
     },
     {
       label:'Module',
+      routerLink: '/module/:id',
       icon:'pi pi-fw pi-bars',
     },
     {
       label:'Calendrier',
+      routerLink: '/dashboard',
       icon:'pi pi-fw pi-calendar',
     },
   ];
