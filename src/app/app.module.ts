@@ -14,10 +14,17 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
 import {CardModule} from 'primeng/card';
 
 import {FormsModule} from '@angular/forms';
-import {CalendarModule} from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import {ChipModule} from "primeng/chip";
+
+
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+]);
 
 @NgModule({
   declarations: [
@@ -36,12 +43,12 @@ import {ChipModule} from "primeng/chip";
     InputTextModule,
     ButtonModule,
     CardModule,
-    CalendarModule,
     FormsModule,
     BrowserAnimationsModule,
     ToggleButtonModule,
     FormsModule,
     ChipModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
