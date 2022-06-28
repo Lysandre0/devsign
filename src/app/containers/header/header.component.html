@@ -1,6 +1,11 @@
 <p-menubar [model]="items">
-  <div>
-    <input type="text" pInputText placeholder="Search" value="">
-    <button type="button" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em"></button>
-  </div>
+  <ng-template pTemplate="start">
+    <div>
+      <img src="assets/logo.PNG" height="40" class="m-2">
+    </div>
+  </ng-template>
+  <button *ngIf="!onLogin"
+          type="button" pButton label="Déconnexion" icon="pi pi-power-off" style="margin-left:.25em"
+          (click)="navigate('login')"
+  ></button>
 </p-menubar>
