@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './containers/login/login.component';
@@ -12,6 +11,10 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CardModule } from "primeng/card";
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import {FormsModule} from "@angular/forms";
+import {ChipModule} from "primeng/chip";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,6 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,10 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    CardModule,
+    ToggleButtonModule,
+    FormsModule,
+    ChipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

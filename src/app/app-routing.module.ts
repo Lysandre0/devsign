@@ -17,6 +17,16 @@ const routes: Routes = [
     path: 'module/:id',
     component: ModuleDetailComponent
   },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

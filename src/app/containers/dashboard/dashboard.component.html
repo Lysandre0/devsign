@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<div class="p-d-flex m-5">
+  <div class="flex justify-content-between align-content-center flex-wrap mb-3">
+    <div>
+      <span class="p-buttonset">
+        <button pButton type="button" label="Planning" icon="pi pi-calendar"
+                [ngClass]="{'p-button-outlined': !displayPlanning}"
+                (click)="!displayPlanning && (switchDisplay())"
+        ></button>
+        <button pButton type="button" label="Liste" icon="pi pi-list"
+                [ngClass]="{'p-button-outlined': displayPlanning}"
+                (click)="displayPlanning && (switchDisplay())"
+        ></button>
+      </span>
+    </div>
+    <div>
+      <p-chip styleClass="py-2 px-3">{{ modules.length }} module{{ modules.length > 1 && ('s') }}</p-chip>
+    </div>
+  </div>
+  <div *ngIf="displayPlanning; else cardsList">
+    <app-planning></app-planning>
+  </div>
+  <ng-template #cardsList>
+    <app-cards-list [modules]="modules"></app-cards-list>
+  </ng-template>
+</div>
+
+
