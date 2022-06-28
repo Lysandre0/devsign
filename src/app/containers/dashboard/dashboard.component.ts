@@ -17,8 +17,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public switchDisplay(value: boolean): void {
-    this.displayPlanning = value;
+  public switchDisplay(): void {
+    this.displayPlanning = !this.displayPlanning;
   }
 
 }
