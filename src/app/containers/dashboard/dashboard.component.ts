@@ -12,8 +12,13 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   public modules: Module[] = modules;
+  public displayPlanning: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  public switchDisplay(value: boolean): void {
+    this.displayPlanning = value;
   }
 
 }
