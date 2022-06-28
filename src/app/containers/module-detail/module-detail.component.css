@@ -1,16 +1,10 @@
 .container {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 img {
   width: 100%;
   height: 8rem;
-}
-
-.card {
-  padding: 2.5rem;
 }
 
 .title {
@@ -25,36 +19,14 @@ img {
   color: #6FA0FF;
 }
 
-.resume p {
-  background-color: #D9D9D9;
-  padding: 10px;
-  width: 80%;
-}
-
 textarea {
   background-color: #D9D9D9;
-  width: 55rem;
+  width: 100%;
+  resize: none;
+  height: 10rem;
+  border: none;
 }
 
-.signature {
-  border-radius: 100px;
-  background-color: #6E84FB;
-  width: 15rem;
-  padding: 0.8rem;
-}
-
-.left_part {
-  width: 50%;
-}
-
-.right_part {
-  width: 50%;
-}
-
-.left_part2 {
-  width: 50%;
-}
-
-.right_part2 {
-  width: 50%;
+:host ::ng-deep .p-button {
+  width: 100% !important;
 }
