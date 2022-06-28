@@ -14,14 +14,7 @@ export class HeaderComponent implements OnInit {
     {
       label:'Dashboard',
       icon:'pi pi-fw pi-microsoft',
-    },
-    {
-      label:'Module',
-      icon:'pi pi-fw pi-bars',
-    },
-    {
-      label:'Calendrier',
-      icon:'pi pi-fw pi-calendar',
+      routerLink: '/dashboard'
     },
   ];
 
