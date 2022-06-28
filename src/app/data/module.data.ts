@@ -14,8 +14,8 @@ const modules: Module[] = [
     teacher: persons[0],
     students: [
       persons[0],
-      persons[0],
-      persons[0],
+      persons[1],
+      persons[2],
       persons[0],
       persons[0],
       persons[0],

@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ModuleDetailComponent
   },
   {
-    path: 'email',
+    path: 'module/:id/email',
     component: EmailSignComponent
   },
   {
