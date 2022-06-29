@@ -21,9 +21,11 @@ import {ChipModule} from "primeng/chip";
 
 import { FullCalendarModule } from '@fullcalendar/angular'; 
 import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
+  interactionPlugin
 ]);
 
 @NgModule({
