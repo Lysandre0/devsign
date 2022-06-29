@@ -25,22 +25,7 @@ export class HeaderComponent implements OnInit {
       routerLink: '/dashboard',
       icon:'pi pi-fw pi-microsoft',
     },
-    {
-      label:'Module',
-      routerLink: '/module/:id',
-      icon:'pi pi-fw pi-bars',
-    },
-    {
-      label:'Calendrier',
-      routerLink: '/dashboard',
-      icon:'pi pi-fw pi-calendar',
-      command: () => {
-        this.navigate('dashboard');
-      },
-    },
   ];
-
-  public title: string = "Devsign";
 
   public loginUrls: string[] = ['/', '/login']
   public onLogin: boolean = true;
