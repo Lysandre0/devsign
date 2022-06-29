@@ -16,6 +16,10 @@ export class PlanningComponent implements OnInit {
   @Input() public modules: Module[];
 
   public calendarOptions: CalendarOptions = {
+    locale: 'fr',
+    buttonText: {
+      today: "Aujourd'hui",
+    },
     initialView: 'dayGridMonth',
     events: [],
     eventDisplay: 'block',
