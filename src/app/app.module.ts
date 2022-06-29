@@ -15,6 +15,8 @@ import { CardModule } from "primeng/card";
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import {FormsModule} from "@angular/forms";
 import {ChipModule} from "primeng/chip";
+import { EmailSignComponent } from './containers/email-sign/email-sign.component';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import {ChipModule} from "primeng/chip";
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
+    EmailSignComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import {ChipModule} from "primeng/chip";
     ToggleButtonModule,
     FormsModule,
     ChipModule,
+    CheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
