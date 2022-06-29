@@ -17,7 +17,7 @@
         </div>
     </div>
     <div *ngIf="displayPlanning; else cardsList">
-        <app-planning></app-planning>
+        <app-planning [modules]="modules"></app-planning>
     </div>
     <ng-template #cardsList>
         <app-cards-list [modules]="modules"></app-cards-list>
