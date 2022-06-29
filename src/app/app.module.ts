@@ -11,12 +11,24 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
-import { CardModule } from "primeng/card";
+import {CardModule} from 'primeng/card';
+
+import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToggleButtonModule } from 'primeng/togglebutton';
-import {FormsModule} from "@angular/forms";
 import {ChipModule} from "primeng/chip";
 import { EmailSignComponent } from './containers/email-sign/email-sign.component';
 import {CheckboxModule} from 'primeng/checkbox';
+
+
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -36,9 +48,12 @@ import {CheckboxModule} from 'primeng/checkbox';
     InputTextModule,
     ButtonModule,
     CardModule,
+    FormsModule,
+    BrowserAnimationsModule,
     ToggleButtonModule,
     FormsModule,
     ChipModule,
+    FullCalendarModule,
     CheckboxModule,
   ],
   providers: [],

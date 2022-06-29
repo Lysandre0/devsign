@@ -22,14 +22,10 @@ export class HeaderComponent implements OnInit {
   public items: MenuItem[] = [
     {
       label:'Dashboard',
+      routerLink: '/dashboard',
       icon:'pi pi-fw pi-microsoft',
-      command: () => {
-        this.navigate('dashboard');
-      },
     },
   ];
-
-  public title: string = "Devsign";
 
   public loginUrls: string[] = ['/', '/login']
   public onLogin: boolean = true;

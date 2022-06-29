@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import * as moment from 'moment';
+import { CalendarOptions } from '@fullcalendar/angular';
+import { formatDate } from '@fullcalendar/angular';
+import {Module} from "../../shared/models/module.model";
+import {modules} from "../../data/module.data";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-planning',
@@ -7,9 +13,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanningComponent implements OnInit {
 
-  constructor() { }
+  @Input() public modules: Module[];
 
-  ngOnInit(): void {
+  public calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    events: [],
+    eventDisplay: 'block',
+    eventClick: (info) => {
+      info.jsEvent.preventDefault();
+      info.event.url && (this.router.navigate([info.event.url]));
+    }
+  };
+
+  constructor(
+    public router: Router
+  ) {}
+
+  ngOnInit() {
+    this.calendarOptions.events = this.modules.map((mod: Module) => {
+      return {
+        title: mod.title,
+        start: moment(mod.dateStart, 'DD/MM/YYYY').format('YYYY-MM-DD'),
+        end: moment(mod.dateEnd, 'DD/MM/YYYY').format('YYYY-MM-DD'),
+        url: `module/${mod.id}`,
+      }
+    });
   }
-
 }
