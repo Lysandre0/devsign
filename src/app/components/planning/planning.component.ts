@@ -19,9 +19,6 @@ export class PlanningComponent implements OnInit {
     initialView: 'dayGridMonth',
     events: [],
     eventDisplay: 'block',
-    titleFormat: {
-
-    },
     eventClick: (info) => {
       info.jsEvent.preventDefault();
       info.event.url && (this.router.navigate([info.event.url]));
