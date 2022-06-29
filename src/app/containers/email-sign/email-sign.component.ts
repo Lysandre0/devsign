@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { modules } from 'src/app/data/module.data';
 import { Module } from 'src/app/shared/models/module.model';
+import { Person } from 'src/app/shared/models/person.model';
 
 @Component({
   selector: 'app-email-sign',
@@ -16,7 +17,10 @@ export class EmailSignComponent implements OnInit {
   ) { }
 
   public module: Module | undefined;
-  public selectedValues: string[] = [];
+  public selectedValues: number[] = [];
+  public isLoading: boolean = false;
+  public isSent: boolean = false;
+  public selectAll: string[] = [];
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -26,4 +30,23 @@ export class EmailSignComponent implements OnInit {
       }
     });
   }
+
+  public send(): void {
+    this.isLoading = true;
+    setTimeout(()=> {
+      this.isLoading = false;
+      this.isSent = true;
+    }, 2000 );
+  }
+
+  public toggleAll(): void {
+    this.selectAll = this.selectAll.length? [] : ['selectAll'];    
+    if (this.selectAll.length && this.module) {
+      this.selectedValues = this.module.students.map((student : Person) => student.id);
+    }
+    else {
+      this.selectedValues = [];
+    }
+  }
+
 }
