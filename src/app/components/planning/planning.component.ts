@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import * as moment from 'moment';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { formatDate } from '@fullcalendar/angular';
-// import {Module} from "../../shared/models/module.model";
-// import {modules} from "../../data/module.data";
+import {Module} from "../../shared/models/module.model";
+import {modules} from "../../data/module.data";
 
 @Component({
   selector: 'app-planning',
@@ -12,10 +12,10 @@ import { formatDate } from '@fullcalendar/angular';
 })
 export class PlanningComponent implements OnInit {
 
+  public modules: Module[] = modules;
   
-
   Events: any[] = [];
-
+  
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',  
     dateClick: this.handleDateClick.bind(this),
@@ -29,7 +29,7 @@ export class PlanningComponent implements OnInit {
   constructor() { }
 
     ngOnInit() {
-  
+      console.log(modules);
 
      
     }
@@ -44,6 +44,9 @@ export class PlanningComponent implements OnInit {
       arg.dateStr = newDateForm;
       console.log(newDateForm);
     }
+
+    
+  
     
    
 
