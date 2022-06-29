@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import * as moment from 'moment';
 import { CalendarOptions } from '@fullcalendar/angular';
+import { formatDate } from '@fullcalendar/angular';
 // import {Module} from "../../shared/models/module.model";
 // import {modules} from "../../data/module.data";
 
@@ -10,6 +11,8 @@ import { CalendarOptions } from '@fullcalendar/angular';
   styleUrls: ['./planning.component.css']
 })
 export class PlanningComponent implements OnInit {
+
+  
 
   Events: any[] = [];
 
@@ -26,12 +29,20 @@ export class PlanningComponent implements OnInit {
   constructor() { }
 
     ngOnInit() {
+  
 
      
     }
     
     handleDateClick(arg: any) {
+      let newDateForm = formatDate(new Date(), {
+        month: 'numeric',
+        year: 'numeric',
+        day: 'numeric'
+      });
       console.log('Date cliked ' + arg.dateStr);
+      arg.dateStr = newDateForm;
+      console.log(newDateForm);
     }
     
    
