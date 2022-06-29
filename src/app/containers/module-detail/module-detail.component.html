@@ -1,1 +1,79 @@
-<p>module-detail works!</p>
+<div class="container">
+  <div *ngIf="module">
+    <div class="mx-5" [ngSwitch]="module.status">
+      <h1>
+        <span>
+          {{ module.title }} - {{ module.field }}
+        </span>
+        <span class="mx-4">
+          /
+        </span>
+        <span *ngSwitchCase="'En cours'" [ngStyle]="{color: 'var(--green-400)'}">
+        {{ module.status }},
+        </span>
+        <span *ngSwitchCase="'Clôturé'" [ngStyle]="{color: 'var(--red-400)'}">
+          {{ module.status }},
+        </span>
+        <span *ngSwitchCase="'À venir'" [ngStyle]="{color: 'var(--purple-400)'}">
+          {{ module.status }},
+        </span>
+        <span [ngStyle]="{color: 'var(--blue-400)'}">
+           du {{ module.dateStart }} au {{ module.dateEnd }}
+        </span>
+      </h1>
+    </div>
+
+    <div class="flex flex-wrap align-items-center">
+      <div class="flex-1 border-round mx-5">
+        <h2>Résumé :</h2>
+        <p class="content-block border-round p-3">
+          {{ module.summary }}
+        </p>
+      </div>
+
+      <div class="flex-1 ml-3 mr-5">
+        <div class="flex">
+          <div class="flex-1">
+            <p><span class="font-bold">Lieu :</span> {{ module.place.name }}</p>
+          </div>
+          <div class="flex-1">
+            <p><span class="font-bold">Téléphone :</span> {{ module.place.phone }}</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex-1">
+            <p><span class="font-bold">Adresse :</span> {{ module.place.address }}</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex-1">
+            <p><span class="font-bold">Mail :</span> {{ module.place.mail }}</p>
+          </div>
+        </div>
+        <div class="flex mt-4">
+          <p-button class="flex-1 mx-2" label="Terminal"></p-button>
+          <p-button class="flex-1 mx-2" label="QR Code"></p-button>
+          <p-button class="flex-1 mx-2" label="Email"></p-button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="flex-1 ml-5 mr-3">
+        <h2>Liste des étudiants :</h2>
+        <p class="content-block border-round p-3">
+          <span *ngFor="let student of module.students">
+            {{ student.firstName }} {{ student.lastName }} <{{ student.mail }}>
+            <br>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-1 border-round ml-3 mr-5">
+        <h2>Commentaire :</h2>
+        <p class="content-block border-round p-3">
+          {{ module.comment }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
