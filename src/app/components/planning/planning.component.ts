@@ -13,7 +13,13 @@ import {modules} from "../../data/module.data";
 export class PlanningComponent implements OnInit {
 
   public modules: Module[] = modules;
-  
+
+  // Module Id 
+  moduleId1 = modules[0].id;
+  moduleId2 = modules[1].id;
+  moduleId3 = modules[2].id;
+  moduleId4 = modules[3].id;
+
   // Module Title
   titleModule1 = modules[0].title;
   titleModule2 = modules[1].title;
@@ -32,18 +38,21 @@ export class PlanningComponent implements OnInit {
     initialView: 'dayGridMonth',  
     dateClick: this.handleDateClick.bind(this),
     events: [
-      { title : this.titleModule1, date: this.dateModule1 },
-      { title : this.titleModule2, date: this.dateModule2 },
-      { title : this.titleModule3, date: this.dateModule3 },
-      { title : this.titleModule4, date: this.dateModule4 }
-    ]
-  };
-
-  
-  constructor() { }
-
-    ngOnInit() {
+      { title : this.titleModule1, date: this.dateModule1, url: 'module/' + this.moduleId1 },
+      { title : this.titleModule2, date: this.dateModule2, url: 'module/' + this.moduleId2 },
+      { title : this.titleModule3, date: this.dateModule3, url: 'module/' + this.moduleId3 },
+      { title : this.titleModule4, date: this.dateModule4 , url: 'module/' + this.moduleId4 }
+    ],
+    eventClick: function(info) {
+      info.jsEvent.preventDefault(); // don't let the browser navigate
+      if (info.event.url) {
+        window.location.replace(info.event.url);
+        // window.open(info.event.url);
+      }
     }
+  };
+  constructor() {}
+    ngOnInit() {}
     
     handleDateClick(arg: any) {
       let newDateForm = formatDate(new Date(), {
@@ -53,7 +62,8 @@ export class PlanningComponent implements OnInit {
       });
       console.log('Date cliked ' + arg.dateStr);
       arg.dateStr = newDateForm;
-      console.log(newDateForm);
+      // console.log(newDateForm);
+      // console.log(this.moduleId1);
     }
 
     
