@@ -17,6 +17,8 @@ import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import {ChipModule} from "primeng/chip";
+import { EmailSignComponent } from './containers/email-sign/email-sign.component';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 import { FullCalendarModule } from '@fullcalendar/angular'; 
@@ -37,6 +39,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
+    EmailSignComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormsModule,
     ChipModule,
     FullCalendarModule,
+    CheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
