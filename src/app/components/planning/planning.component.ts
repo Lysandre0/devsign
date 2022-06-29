@@ -33,9 +33,9 @@ export class PlanningComponent implements OnInit {
     this.calendarOptions.events = this.modules.map((mod: Module) => {
       return {
         title: mod.title,
-        date: moment(mod.dateStart, 'DD/MM/YYYY').format('YYYY-MM-DD'),
+        start: moment(mod.dateStart, 'DD/MM/YYYY').format('YYYY-MM-DD'),
+        end: moment(mod.dateEnd, 'DD/MM/YYYY').format('YYYY-MM-DD'),
         url: `module/${mod.id}`,
-        eventDisplay: 'block'
       }
     });
   }
