@@ -40,6 +40,8 @@ const modules: Module[] = [
     teacher: persons[0],
     students: [
       persons[0],
+      persons[1],
+      persons[2],
     ],
     comment: "Cours d'algorithmie",
     place: places[0],
@@ -72,6 +74,24 @@ const modules: Module[] = [
     teacher: persons[0],
     students: [
       persons[0],
+    ],
+    comment: "Cours d'algorithmie",
+    place: places[0],
+    image: 'https://korben.info/app/uploads/2018/12/codes-coding-computer-270366.jpg'
+  },
+  {
+    id: 5,
+    title: "Expertise",
+    field: "Développement",
+    dateStart: "17/06/2022",
+    dateEnd: "17/06/2022",
+    status: "Terminé",
+    summary: "Expertise",
+    teacher: persons[0],
+    students: [
+      persons[0],
+      persons[1],
+      persons[2],
     ],
     comment: "Cours d'algorithmie",
     place: places[0],

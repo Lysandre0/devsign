@@ -1,70 +1,11 @@
-.main_div{
-    width: 100%;
-    height: 100vh;
-    position: relative;
+form {
+  height: 80vh;
 }
 
-.box{
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 50px;
+input {
+  width: 60%;
 }
 
-.box .inputBox{
-    position: relative;
-    
-}    
-
-.box .inputBox input{
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: black ;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    border: 0.5px solid #e8e8e8;
-    outline: none;
-    background-color: #efefef;
-    border-radius: 12px;
-}
-
-.box .inputBox label{
-    position: absolute;
-    top: 0;
-    left: 5px;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #a5a5a5;
-    letter-spacing: 1px;
-    transition: 0.5s;
-}
-.box input[type="submit"]{
-    background:#6e84fb ;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 10px;
-    font-size: 14px;
-    color: black;
-    cursor: pointer;
-    position: relative;
-    margin-left: 33%;
-    margin-right: 33%;
-}
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label{
-    top: -20px;
-    left: 0;
-    color: #6e84fb;
-    font-size: 12px;
-}
-
-.box input[type="submit"]:hover{
-    background: #6e84fb;
-    color: black;
-    position: relative;
+:host ::ng-deep .p-button {
+  width: 60% !important;
 }

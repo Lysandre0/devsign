@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   public modules: Module[] = modules;
-  public displayPlanning: boolean = false;
+  public displayPlanning: boolean = true;
 
   ngOnInit(): void {
   }

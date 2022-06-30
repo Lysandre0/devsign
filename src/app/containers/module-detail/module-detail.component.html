@@ -17,6 +17,9 @@
         <span *ngSwitchCase="'À venir'" [ngStyle]="{color: 'var(--purple-400)'}">
           {{ module.status }},
         </span>
+        <span *ngSwitchDefault>
+          {{ module.status }},
+        </span>
         <span [ngStyle]="{color: 'var(--blue-400)'}">
            du {{ module.dateStart }} au {{ module.dateEnd }}
         </span>
@@ -31,7 +34,7 @@
         </p>
       </div>
 
-      <div class="flex-1 ml-3 mr-5">
+      <div class="flex-1 ml-3 mr-5" *ngIf="!onCloture; else canvas">
         <div class="flex">
           <div class="flex-1">
             <p><span class="font-bold">Lieu :</span> {{ module.place.name }}</p>
@@ -50,24 +53,71 @@
             <p><span class="font-bold">Mail :</span> {{ module.place.mail }}</p>
           </div>
         </div>
-        <div class="flex mt-4">
-          <p-button class="flex-1 mx-2" label="Terminal"></p-button>
+        <div class="flex mt-4" *ngIf="!['Terminé', 'Clôturé'].includes(module.status); else cloture">
+          <p-button class="flex-1 mx-2" label="Terminal" [disabled]="true"></p-button>
           <p-button class="flex-1 mx-2" label="QR Code"></p-button>
-          <p-button class="flex-1 mx-2" label="Email"></p-button>
+          <p-button class="flex-1 mx-2" label="Email" [routerLink]="'/module/' + module.id + '/email'"></p-button>
         </div>
+        <ng-template #cloture>
+          <button *ngIf="!canvasClicked" pButton class="p-button-danger flex-1" label="Clôturer" (click)="startCloture()"></button>
+        </ng-template>
       </div>
+      <ng-template #canvas>
+        <div class="flex-1 border-round mx-5">
+          <app-canvas (canvasClickedChange)="onCanvasClick()"></app-canvas>
+          <button pButton class="p-button-danger flex-1 mt-3" label="Clôturer" (click)="showModal()" [disabled]="!canvasClicked"></button>
+
+          <p-dialog header="Souhaitez-vous envoyer des mails d'émargement de relance ?"
+                    [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false"
+          >
+            <ng-template pTemplate="footer">
+              <div class="flex flex-wrap justify-content-center">
+                <p-button class="flex-1 mx-3" icon="pi pi-times" (click)="endCloture()" label="Non" styleClass="p-button-danger"></p-button>
+                <p-button class="flex-1 mx-3" icon="pi pi-check" (click)="endCloture()" label="Oui"></p-button>
+              </div>
+            </ng-template>
+          </p-dialog>
+        </div>
+      </ng-template>
     </div>
     <div class="flex flex-wrap">
       <div class="flex-1 ml-5 mr-3">
         <h2>Liste des étudiants :</h2>
-        <p class="content-block border-round p-3">
-          <span *ngFor="let student of module.students">
-            {{ student.firstName }} {{ student.lastName }} <{{ student.mail }}>
-            <br>
-          </span>
-        </p>
+        <div class="content-block border-round p-3">
+          <div class="flex align-items-center" *ngFor="let student of module.students">
+              <span class="flex-1">
+                {{ student.firstName }} {{ student.lastName }} <{{ student.mail }}>
+              </span>
+              <span *ngIf="module.status === 'Clôturé' && student.statusSign" class="mb-2">
+                <button pButton [ngClass]="{
+                  'p-button-success': student.statusSign === 'Signé',
+                  'p-button-help': student.statusSign === 'Attendu',
+                  'p-button-danger': student.statusSign === 'Absent'
+                }" class="px-2 py-1 p-button p-button-sm" [label]="student.statusSign"
+                (click)="displayChangeStatusSign(student)">
+                </button>
+              </span>
+              <br>
+          </div>
+          <p-dialog header="Souhaitez-vous envoyer des mails d'émargement de relance"
+                    [(visible)]="displayModalSign" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false"
+          >
+            <ng-template pTemplate="footer">
+              <div class="flex flex-wrap flex-column justify-content-center">
+                <p-button [disabled]="changeSignStudent.statusSign === 'Signé'" (click)="changeStatusSign('Signé')"
+                          class="flex-1 my-2" label="Signé" styleClass="p-button-success">
+                </p-button>
+                <p-button [disabled]="changeSignStudent.statusSign === 'Attendu'" (click)="changeStatusSign('Attendu')"
+                          class="flex-1 my-2" label="Attendu" styleClass="p-button-help">
+                </p-button>
+                <p-button [disabled]="changeSignStudent.statusSign === 'Absent'" (click)="changeStatusSign('Absent')"
+                          class="flex-1 my-2" label="Absent" styleClass="p-button-danger">
+                </p-button>
+              </div>
+            </ng-template>
+          </p-dialog>
+        </div>
       </div>
-
       <div class="flex-1 border-round ml-3 mr-5">
         <h2>Commentaire :</h2>
         <p class="content-block border-round p-3">

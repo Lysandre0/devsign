@@ -11,6 +11,9 @@
         <span *ngSwitchCase="'À venir'" [ngStyle]="{color: 'var(--purple-400)'}">
           {{ module.status }},
         </span>
+        <span *ngSwitchDefault>
+          {{ module.status }},
+        </span>
         <span [ngStyle]="{color: 'var(--blue-400)'}">
            du {{ module.dateStart }} au {{ module.dateEnd }}
         </span>
