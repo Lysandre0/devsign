@@ -1,25 +1,8 @@
-.emargement {
-    float: left;
-    width: 150px;
-    margin-top: 20px;
-    width: 300px;
-    font-size: 19px;
-    font-family: 'Poppins', sans-serif;
+.container {
+  font-family: 'Poppins', sans-serif;
 }
 
-.title {
-    margin-left: 170px;
-    text-align: center;
-    width: auto;
-    font-size: 21px;
-    margin-right: 170px;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-h1{
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-    font-style: bold;
+:host ::ng-deep .p-button {
+  width: 100% !important;
 }
 

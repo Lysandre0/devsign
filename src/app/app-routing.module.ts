@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ModuleDetailComponent
   },
   {
-    path: 'qrcode-sign',
+    path: 'module/:id/qrcode',
     component: QrcodeSignComponent
   },
   {

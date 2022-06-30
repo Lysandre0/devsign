@@ -1,7 +1,12 @@
 <div class="container">
   <div *ngIf="module">
-    <div class="title pl-5">
-      <h1>Émargement : Email </h1>
+    <div class="flex align-items-center pl-5">
+      <div class="mr-5">
+        <h1>Émargement : Email </h1>
+      </div>
+      <div>
+        <button id="back" pButton label="Retour" icon="pi pi-arrow-left" [routerLink]="module && ('/module/' + module.id)"></button>
+      </div>
     </div>
     <div *ngIf="!isSent; else success" class="flex align-items-center">
       <div class="flex-1 ml-5 mr-3">

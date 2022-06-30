@@ -8,6 +8,6 @@
   overflow-y: auto;
 }
 
-:host ::ng-deep .p-button {
+:host ::ng-deep .p-button:not#back {
   width: 100% !important;
 }

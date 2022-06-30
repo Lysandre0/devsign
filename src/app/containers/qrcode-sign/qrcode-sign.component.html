@@ -1,16 +1,16 @@
-<h1>DevSign</h1>
-
-<head>
-</head>
-
-<body>
-    <div class="emargement">
-        <p>Émargement : QR Code</p>
+<body class="container">
+  <div class="flex flex-column flex-wrap justify-content-center align-items-center" style="height: 80vh">
+    <div>
+      <button pButton label="Retour" icon="pi pi-arrow-left" [routerLink]="module && ('/module/' + module.id)"></button>
     </div>
-    <div class="title">
-        <p><B>Scannez le QR Code suivant</B>
+    <div>
+      <h1>Émargement : QR Code</h1>
     </div>
-    <div class="qrcode">
-        <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    <div>
+      <h2>Scannez le QR Code suivant</h2>
     </div>
+    <div>
+      <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+  </div>
 </body>
