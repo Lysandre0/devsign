@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './containers/login/login.component';
@@ -12,7 +11,28 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+<<<<<<< HEAD
 import { QrcodeSignComponent } from './containers/qrcode-sign/qrcode-sign.component';
+=======
+import {CardModule} from 'primeng/card';
+
+import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import {ChipModule} from "primeng/chip";
+import { EmailSignComponent } from './containers/email-sign/email-sign.component';
+import {CheckboxModule} from 'primeng/checkbox';
+
+
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+>>>>>>> 57ab6fedf2e7c9ada3f2bac1a1ccbf0afc2600f3
 
 @NgModule({
   declarations: [
@@ -23,8 +43,12 @@ import { QrcodeSignComponent } from './containers/qrcode-sign/qrcode-sign.compon
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
+<<<<<<< HEAD
     QrcodeSignComponent,
     
+=======
+    EmailSignComponent,
+>>>>>>> 57ab6fedf2e7c9ada3f2bac1a1ccbf0afc2600f3
   ],
   imports: [
     BrowserModule,
@@ -32,6 +56,14 @@ import { QrcodeSignComponent } from './containers/qrcode-sign/qrcode-sign.compon
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    CardModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToggleButtonModule,
+    FormsModule,
+    ChipModule,
+    FullCalendarModule,
+    CheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
