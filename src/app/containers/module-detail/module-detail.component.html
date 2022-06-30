@@ -34,7 +34,7 @@
         </p>
       </div>
 
-      <div class="flex-1 ml-3 mr-5">
+      <div class="flex-1 ml-3 mr-5" *ngIf="!onCloture; else canvas">
         <div class="flex">
           <div class="flex-1">
             <p><span class="font-bold">Lieu :</span> {{ module.place.name }}</p>
@@ -53,12 +53,21 @@
             <p><span class="font-bold">Mail :</span> {{ module.place.mail }}</p>
           </div>
         </div>
-        <div class="flex mt-4">
+        <div class="flex mt-4" *ngIf="module.status !== 'Terminé'; else cloture">
           <p-button class="flex-1 mx-2" label="Terminal"></p-button>
           <p-button class="flex-1 mx-2" label="QR Code"></p-button>
           <p-button class="flex-1 mx-2" label="Email"></p-button>
         </div>
+        <ng-template #cloture>
+          <button *ngIf="!canvasClicked" pButton class="p-button-danger flex-1" label="Clôturer" (click)="startCloture()"></button>
+        </ng-template>
       </div>
+      <ng-template #canvas>
+        <div class="flex-1 border-round mx-5">
+          <app-canvas (canvasClickedChange)="onCanvasClick()"></app-canvas>
+          <button pButton class="p-button-danger flex-1 mt-3" label="Clôturer" (click)="endCloture()" [disabled]="!canvasClicked"></button>
+        </div>
+      </ng-template>
     </div>
     <div class="flex flex-wrap">
       <div class="flex-1 ml-5 mr-3">

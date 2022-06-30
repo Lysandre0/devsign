@@ -17,6 +17,9 @@ export class ModuleDetailComponent implements OnInit {
 
   public module: Module | undefined;
 
+  public onCloture: boolean = false;
+  public canvasClicked: boolean = false;
+
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.module = modules.find((mod: Module) => mod.id === parseInt(params['id']));
@@ -24,6 +27,19 @@ export class ModuleDetailComponent implements OnInit {
         this.router.navigate(['dashboard']);
       }
     });
+  }
+
+  public startCloture() {
+    this.onCloture = true;
+  }
+
+  public onCanvasClick() {
+    this.canvasClicked = true;
+  }
+
+  public endCloture() {
+    this.onCloture = false;
+    this.module && (this.module.status = "Clôturé");
   }
 
 }
