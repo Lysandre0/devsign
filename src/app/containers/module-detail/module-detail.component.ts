@@ -19,6 +19,7 @@ export class ModuleDetailComponent implements OnInit {
 
   public onCloture: boolean = false;
   public canvasClicked: boolean = false;
+  public displayModal: boolean = false;
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -29,15 +30,20 @@ export class ModuleDetailComponent implements OnInit {
     });
   }
 
-  public startCloture() {
+  public startCloture(): void {
     this.onCloture = true;
   }
 
-  public onCanvasClick() {
+  public onCanvasClick(): void {
     this.canvasClicked = true;
   }
 
-  public endCloture() {
+  public showModal(): void {
+    this.displayModal = true;
+  }
+
+  public endCloture(): void {
+    this.displayModal = false;
     this.onCloture = false;
     this.module && (this.module.status = "Clôturé");
   }

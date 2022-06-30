@@ -21,10 +21,11 @@ import { EmailSignComponent } from './containers/email-sign/email-sign.component
 import {CheckboxModule} from 'primeng/checkbox';
 
 
-import { FullCalendarModule } from '@fullcalendar/angular'; 
-import dayGridPlugin from '@fullcalendar/daygrid'; 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { CanvasComponent } from './components/canvas/canvas.component';
+import {DialogModule} from "primeng/dialog";
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -57,6 +58,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ChipModule,
     FullCalendarModule,
     CheckboxModule,
+    DialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

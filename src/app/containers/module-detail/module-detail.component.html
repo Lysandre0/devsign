@@ -65,7 +65,18 @@
       <ng-template #canvas>
         <div class="flex-1 border-round mx-5">
           <app-canvas (canvasClickedChange)="onCanvasClick()"></app-canvas>
-          <button pButton class="p-button-danger flex-1 mt-3" label="Clôturer" (click)="endCloture()" [disabled]="!canvasClicked"></button>
+          <button pButton class="p-button-danger flex-1 mt-3" label="Clôturer" (click)="showModal()" [disabled]="!canvasClicked"></button>
+
+          <p-dialog header="Souhaitez-vous envoyer des mails d'émargement de relance"
+                    [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false"
+          >
+            <ng-template pTemplate="footer">
+              <div class="flex flex-wrap justify-content-center">
+                <p-button class="flex-1 mx-3" icon="pi pi-times" (click)="endCloture()" label="Non" styleClass="p-button-danger"></p-button>
+                <p-button class="flex-1 mx-3" icon="pi pi-check" (click)="endCloture()" label="Oui"></p-button>
+              </div>
+            </ng-template>
+          </p-dialog>
         </div>
       </ng-template>
     </div>
@@ -79,7 +90,6 @@
           </span>
         </p>
       </div>
-
       <div class="flex-1 border-round ml-3 mr-5">
         <h2>Commentaire :</h2>
         <p class="content-block border-round p-3">
