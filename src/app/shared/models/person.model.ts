@@ -7,4 +7,5 @@ export class Person {
   public address: string;
   public company: string;
   public photo: string;
+  public statusSign?: string;
 }
