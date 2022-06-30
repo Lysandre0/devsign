@@ -26,4 +26,7 @@ export class ModuleDetailComponent implements OnInit {
     });
   }
 
+  public navigate(): void {
+    this.router.navigate(['/module/' + this.module?.id + '/email']);
+  }
 }

@@ -38,10 +38,10 @@
           <button pButton class="mx-2" label="Envoyer" (click)="send()" [loading]="isLoading"
             [disabled]="!selectedValues.length"></button>
         </div>
-      </div>      
+      </div>
     </div>
     <ng-template #success>
-      <h1>Mail Envoyé !</h1>
+      <h1 class="flex justify-content-center" [ngStyle]="{color:'var(--green-500)'}">Mail Envoyé !</h1>
     </ng-template>
   </div>
 </div>
