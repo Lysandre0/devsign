@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./containers/login/login.component";
 import {DashboardComponent} from "./containers/dashboard/dashboard.component";
 import {ModuleDetailComponent} from "./containers/module-detail/module-detail.component";
-
+import {QrcodeSignComponent} from "./containers/qrcode-sign/qrcode-sign.component";
 const routes: Routes = [
   {
     path: 'login',
@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'module/:id',
     component: ModuleDetailComponent
+  },
+  {
+    path: 'qrcode-sign',
+    component: QrcodeSignComponent
   },
 ];
 
