@@ -61,5 +61,4 @@ export class ModuleDetailComponent implements OnInit {
     this.changeSignStudent.statusSign = typeSign;
     this.displayModalSign = false;
   }
-
 }
