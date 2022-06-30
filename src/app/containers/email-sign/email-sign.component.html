@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="module">
+  <div *ngIf="module && !isSent; else success">
     <div class="flex align-items-center pl-5">
       <div class="mr-5">
         <h1>Émargement : Email </h1>
@@ -8,7 +8,7 @@
         <button id="back" pButton label="Retour" icon="pi pi-arrow-left" [routerLink]="module && ('/module/' + module.id)"></button>
       </div>
     </div>
-    <div *ngIf="!isSent; else success" class="flex align-items-center">
+    <div class="flex align-items-center">
       <div class="flex-1 ml-5 mr-3">
         <h2>Liste des étudiants :</h2>
         <div class="content-block border-round p-3">
@@ -45,8 +45,24 @@
         </div>
       </div>
     </div>
-    <ng-template #success>
-      <h1 class="flex justify-content-center" [ngStyle]="{color:'var(--green-500)'}">Mail Envoyé !</h1>
-    </ng-template>
   </div>
+  <ng-template #success>
+    <div class="flex flex-column align-items-center justify-content-center" style="height: 80vh">
+      <div>
+        <h1 class="flex justify-content-center" [ngStyle]="{color:'var(--green-500)'}">
+          Mail{{ selectedValues.length > 1 ? "s" : "" }} envoyé{{ selectedValues.length > 1 ? "s" : "" }} !
+        </h1>
+      </div>
+      <div>
+        <div class="flex justify-content-center">
+          <div class="flex-1 mr-5">
+            <p-progressSpinner class="custom-spinner"></p-progressSpinner>
+          </div>
+          <div>
+            <h1>Vous allez être redirigé {{ dots }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>

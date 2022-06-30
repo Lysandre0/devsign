@@ -9,7 +9,7 @@
 
       <input [(ngModel)]="password" class="my-3" pInputText type="password" name="password" autocomplete="off" placeholder="Mot de passe" required>
 
-      <button pButton class="p-button" type="submit" label="Se connecter" [disabled]="!this.email && !this.password"> </button>
+      <button pButton class="p-button" type="submit" label="Se connecter" [disabled]="!this.email || !this.password"> </button>
     </form>
 </body>
 

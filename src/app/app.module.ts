@@ -29,6 +29,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { CanvasComponent } from './components/canvas/canvas.component';
 import {DialogModule} from "primeng/dialog";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -64,6 +65,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CheckboxModule,
     QRCodeModule,
     DialogModule,
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,6 +21,7 @@ export class EmailSignComponent implements OnInit {
   public isLoading: boolean = false;
   public isSent: boolean = false;
   public selectAll: string[] = [];
+  public dots: string = '';
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -36,9 +37,12 @@ export class EmailSignComponent implements OnInit {
     setTimeout(()=> {
       this.isLoading = false;
       this.isSent = true;
+      setInterval(() => {
+        this.dots += ' . ';
+      }, 800)
       setTimeout(() => {
         this.module && (this.router.navigate(['module', this.module.id]));
-      }, 2000)
+      }, 3000)
     }, 2000 );
   }
 
