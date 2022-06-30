@@ -11,10 +11,10 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
-<<<<<<< HEAD
 import { QrcodeSignComponent } from './containers/qrcode-sign/qrcode-sign.component';
-=======
 import {CardModule} from 'primeng/card';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +32,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
 ]);
->>>>>>> 57ab6fedf2e7c9ada3f2bac1a1ccbf0afc2600f3
 
 @NgModule({
   declarations: [
@@ -43,12 +42,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
-<<<<<<< HEAD
-    QrcodeSignComponent,
-    
-=======
+    QrcodeSignComponent,    
     EmailSignComponent,
->>>>>>> 57ab6fedf2e7c9ada3f2bac1a1ccbf0afc2600f3
   ],
   imports: [
     BrowserModule,
@@ -64,6 +59,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ChipModule,
     FullCalendarModule,
     CheckboxModule,
+    QRCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
