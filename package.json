@@ -21,6 +21,7 @@
         "@fullcalendar/angular": "^5.11.0",
         "@fullcalendar/daygrid": "^5.11.0",
         "@fullcalendar/interaction": "^5.11.0",
+        "angularx-qrcode": "^13.0.15",
         "install": "^0.13.0",
         "moment": "^2.29.3",
         "npm": "^8.13.1",
