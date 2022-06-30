@@ -36,11 +36,14 @@ export class EmailSignComponent implements OnInit {
     setTimeout(()=> {
       this.isLoading = false;
       this.isSent = true;
+      setTimeout(() => {
+        this.module && (this.router.navigate(['module', this.module.id]));
+      }, 2000)
     }, 2000 );
   }
 
   public toggleAll(): void {
-    this.selectAll = this.selectAll.length? [] : ['selectAll'];    
+    this.selectAll = this.selectAll.length? [] : ['selectAll'];
     if (this.selectAll.length && this.module) {
       this.selectedValues = this.module.students.map((student : Person) => student.id);
     }

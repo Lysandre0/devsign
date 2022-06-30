@@ -53,8 +53,8 @@
             <p><span class="font-bold">Mail :</span> {{ module.place.mail }}</p>
           </div>
         </div>
-        <div class="flex mt-4" *ngIf="module.status !== 'Terminé'; else cloture">
-          <p-button class="flex-1 mx-2" label="Terminal"></p-button>
+        <div class="flex mt-4" *ngIf="!['Terminé', 'Clôturé'].includes(module.status); else cloture">
+          <p-button class="flex-1 mx-2" label="Terminal" [disabled]="true"></p-button>
           <p-button class="flex-1 mx-2" label="QR Code"></p-button>
           <p-button class="flex-1 mx-2" label="Email" [routerLink]="'/module/' + module.id + '/email'"></p-button>
         </div>
@@ -67,7 +67,7 @@
           <app-canvas (canvasClickedChange)="onCanvasClick()"></app-canvas>
           <button pButton class="p-button-danger flex-1 mt-3" label="Clôturer" (click)="showModal()" [disabled]="!canvasClicked"></button>
 
-          <p-dialog header="Souhaitez-vous envoyer des mails d'émargement de relance"
+          <p-dialog header="Souhaitez-vous envoyer des mails d'émargement de relance ?"
                     [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false"
           >
             <ng-template pTemplate="footer">
