@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './containers/login/login.component';
@@ -12,6 +11,24 @@ import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './containers/header/header.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import {CardModule} from 'primeng/card';
+
+import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import {ChipModule} from "primeng/chip";
+import { EmailSignComponent } from './containers/email-sign/email-sign.component';
+import {CheckboxModule} from 'primeng/checkbox';
+
+
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -22,7 +39,7 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     HeaderComponent,
     PlanningComponent,
     CardsListComponent,
-    
+    EmailSignComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +47,14 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    CardModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToggleButtonModule,
+    FormsModule,
+    ChipModule,
+    FullCalendarModule,
+    CheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

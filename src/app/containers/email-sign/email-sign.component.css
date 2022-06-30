@@ -5,8 +5,6 @@
 .content-block {
   background-color: #D9D9D9;
   width: 100%;
-  min-height: 10rem;
-  max-height: 10rem;
   overflow-y: auto;
 }
 
