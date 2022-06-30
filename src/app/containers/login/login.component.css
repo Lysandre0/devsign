@@ -1,0 +1,11 @@
+form {
+  height: 80vh;
+}
+
+input {
+  width: 60%;
+}
+
+:host ::ng-deep .p-button {
+  width: 60% !important;
+}

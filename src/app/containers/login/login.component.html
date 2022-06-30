@@ -1,1 +1,16 @@
-<p>{{ modules[0].id }}</p>
+<!-- login screen -->
+<head>
+    <title></title>
+</head>
+<body>
+    <form class="flex flex-wrap flex-column justify-content-center align-items-center"
+          #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <input [(ngModel)]="email" class="my-3" pInputText type="email" name="email" placeholder="Adresse mail" required>
+
+      <input [(ngModel)]="password" class="my-3" pInputText type="password" name="password" autocomplete="off" placeholder="Mot de passe" required>
+
+      <button pButton class="p-button" type="submit" label="Se connecter" [disabled]="!this.email && !this.password"> </button>
+    </form>
+</body>
+
+
